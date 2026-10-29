@@ -1,0 +1,2 @@
+$events = Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4625} -MaxEvents 10
+$events | Select-Object TimeCreated, Id, Message | ConvertTo-Html -Title "Failed Logon Report" -PreContent "<h1>Failed Logon Attempts</h1>" | Out-File C:\FailedLogonReport.html

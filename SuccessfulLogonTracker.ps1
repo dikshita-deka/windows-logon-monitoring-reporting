@@ -1,0 +1,1 @@
+Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4624} -MaxEvents 10 | Select-Object TimeCreated,Id,Message | Format-Table -AutoSize
